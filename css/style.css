@@ -1,13 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: rgb(92, 142, 167);
+    --color-secondary: rgb(177, 205, 123);
+    --color-3rd: rgb(225, 189, 143);
+    --font-primary: 'Athiti', sans-serif;
+    --grid: 1rem;
+    --font-size: 1rem;
+}
+
 #formGameChar {
-    background-color: aquamarine;
+    background-color: var(--color-primary);
     margin: 10px;
     padding: 20px;
-    border: 6px solid yellowgreen;
-    border-radius: 10px;
+    border: 6px solid var(--color-secondary);
+    border-radius: 20px;
 
     input {
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         width: 30%;
         font-size: 1.25rem;
     }
+}
+
+ul {
+    font-family: 'Arial Narrow Bold', sans-serif;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 5px solid var(--color-primary);
+    background-color: var(--color-secondary);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 0px;
+
+    li {
+        text-align: center;
+        list-style: none;
+        margin: 0 auto;
+        width: 30%;
+        border-radius: 20px;
+        background-color: var(--color-3rd);
+        border: 3px solid var(--color-primary);
+        padding: 20px;
+        margin-bottom: 20px;
+
+
+        button {
+            display: block;
+            position: absolute;
+            width: 110px;
+            padding: 5px 10px;
+            background-color: var(--color-primary);
+            color: white;
+            border: 3px solid var(--color-3rd);
+            border-radius: 20px;
+
+            &:hover {
+                background-color: white;
+                color: var(--color-primary);
+                font-weight: bolder;
+            }
+        }
+    }
+
 }
