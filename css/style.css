@@ -30,32 +30,42 @@
 ul {
     font-family: 'Arial Narrow Bold', sans-serif;
     margin: 10px;
-    padding: 20px;
+    padding: 15px 0px;
     border-radius: 20px;
     border: 5px solid var(--color-primary);
     background-color: var(--color-secondary);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px 0px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 5px;
+
 
     li {
+        font-size: 1.25rem;
         text-align: center;
         list-style: none;
         margin: 0 auto;
-        width: 30%;
+        width: 90%;
         border-radius: 20px;
         background-color: var(--color-3rd);
         border: 3px solid var(--color-primary);
-        padding: 20px;
+        padding: 15px;
         margin-bottom: 20px;
 
+        div {
+            font-size: 1rem;
+            background-color: var(--color-primary);
+            padding: 5px;
+            margin: 5px;
+            font-weight: bold;
+            border-radius: 20px;
+        }
 
         button {
             display: block;
             position: absolute;
             width: 110px;
             padding: 5px 10px;
+            margin: 2px;
             background-color: var(--color-primary);
             color: white;
             border: 3px solid var(--color-3rd);
@@ -69,4 +79,22 @@ ul {
         }
     }
 
+}
+
+@media(min-width: 680px) {
+    ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(min-width: 1004px) {
+    ul {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media(min-width: 1200px) {
+    ul {
+        grid-template-columns: repeat(5, 1fr);
+    }
 }

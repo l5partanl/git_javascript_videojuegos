@@ -12,6 +12,8 @@
 4️⃣ Guarda los personajes en el LocalStorage, así no desaparecen cuando se cierre la página. Para probar que funciona deberas cerrar la pantalla del navegador y comprobar que los personajes almacenados siguen ahi.
 5️⃣ Cuando la página se cargue, revisa el LocalStorage y muestra los personajes guardados.
 
+si no hay datos, que de un alert y no cargue nada, si repetimos datos, que de alert y que no cargue
+
 🛠️ Herramientas que necesitas
 🔹 Un archivo HTML con un formulario de entrada con un (input), un botón (button) y un contenedor (section ul) para la lista.
 🔹 Un archivo JavaScript donde harás la magia del DOM, arrays, eventos y LocalStorage. Llamalo main.js
