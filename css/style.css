@@ -38,6 +38,15 @@
     grid-template-columns: repeat(1, 1fr);
     gap: 3px;
 
+    p {
+        margin: 20px;
+        color: var(--color-primary);
+
+        strong {
+            font-size: 2rem;
+            display: block;
+        }
+    }
 
     li {
         font-size: 1.2rem;

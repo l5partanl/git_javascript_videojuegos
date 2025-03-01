@@ -1,7 +1,8 @@
 //capturamos elementos a utilizar:
-const form = document.querySelectorAll('#formGameChart')
-const sectionList = document.querySelector('.list ul')
-
+const inputName = document.querySelector('input:first-child');
+const inputGame = document.querySelector('input:nth-child(2)');
+const btnAdd = document.querySelector('input:last-child');
+const sectionList = document.querySelector('.list ul');
 
 //------pintado en pantalla------
 
@@ -14,7 +15,6 @@ function printChar(item, domElement) {
     const button = document.createElement('button');
     button.textContent = "ELIMINAR";
 
-
     li.append(h3, span, button)
     domElement.appendChild(li)
 }
@@ -22,10 +22,25 @@ function printChar(item, domElement) {
 function printAllChar(list, domElement) {
     domElement.innerHTML = "";
     if (list.length === 0) {
-        domElement.innerHTML = '<h2>Aún no hay perosonajes cargados</h2><p>Llena el formulario con con los datos del personaje que quieras y lo veras reflejado aquí una vez que lo registres.</p>'
+        domElement.style.display = "block";
+        domElement.innerHTML = '<p><strong>Aún no hay perosonajes cargados</strong> Llena el formulario con con los datos del personaje que quieras y lo veras reflejado aquí una vez que lo registres.</p>'
     } else {
         list.forEach(item => printChar(item, domElement));
     }
 }
 
-printAllChar(character, sectionList);
+function saveCharacter(event, array) {
+    event.preventDefault();
+    const newChar = {
+        name: inputName.value,
+        game: inputGame.value,
+    }
+    array.push(newChar)
+    inputName.value = "";
+    inputGame.value = "";
+
+    printAllChar(array, sectionList);
+}
+
+btnAdd.addEventListener('click', (event) => saveCharacter(event, characters));
+
