@@ -34,7 +34,7 @@ function printAllChar(list, domElement) {
     domElement.innerHTML = "";
     if (list.length === 0) {
         domElement.style.display = "block";
-        domElement.innerHTML = '<p><strong>Aún no hay perosonajes cargados</strong> Llena el formulario con con los datos del personaje que quieras y lo veras reflejado aquí una vez que lo registres.</p>'
+        domElement.innerHTML = '<p><strong>Aún no hay personajes cargados</strong> Llena el formulario con los datos del personaje que quieras y lo veras reflejado aquí una vez que lo registres.</p>'
     } else {
         domElement.style.display = "grid";
         list.forEach(item => printChar(item, domElement));
