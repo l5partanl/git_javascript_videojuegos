@@ -1,6 +1,6 @@
 //creamos un array vacío donde vamos a ir depositando los peronajes a medida que se submitean
 
-const characters = [
+let characters = [
     /*  { name: "Mario", game: "Super Mario Bros" },
      { name: "Luigi", game: "Super Mario Bros" },
      { name: "Samus", game: "Super Metroid" },
@@ -24,4 +24,14 @@ function erraseCharacter(id) {
     }
     console.log(characters);
     console.log(deletedCharacters);
+}
+
+function extraerInfoLocalStorage() {
+    //miramos en el localstorage y vemos si hay datos
+    let data = localStorage.getItem('characters');
+    console.log(data)
+    if (data !== null) {
+        characters = JSON.parse(data);
+    }
+    printAllChar(characters, sectionList);//init, para primera lectura de datos guardados
 }

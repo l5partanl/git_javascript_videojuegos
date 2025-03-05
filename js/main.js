@@ -4,6 +4,8 @@ const inputGame = document.querySelector('input:nth-child(2)');
 const btnAdd = document.querySelector('input:last-child');
 const sectionList = document.querySelector('.list ul');
 
+
+
 //------pintado en pantalla------
 
 function printChar(item, domElement) {
@@ -22,9 +24,13 @@ function printChar(item, domElement) {
 
     li.append(h3, span, button)
     domElement.appendChild(li)
+
 }
 
 function printAllChar(list, domElement) {
+
+    localStorage.setItem('characters', JSON.stringify(list))
+
     domElement.innerHTML = "";
     if (list.length === 0) {
         domElement.style.display = "block";
@@ -64,6 +70,6 @@ function saveCharacter(event, array) {
     printAllChar(array, sectionList);
 }
 
-printAllChar(characters, sectionList);//init, para primera lectura de datos guardados
 btnAdd.addEventListener('click', (event) => saveCharacter(event, characters));
 
+extraerInfoLocalStorage(); //init al iniciar la pagina
